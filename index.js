@@ -22,9 +22,22 @@ function getHTML(link) {
    const adress = tt.match(/^[^<]+/g);
    var content = {"adress":String(decodeURI(adress)), "city":String(decodeURI(city))};
    console.log(content);
+   getAPI(content)
  }).catch(err => console.log(err))
 };
 
+function getAPI(content) {
+  fetch(link, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}, body: JSON.stringify({content})}).then(function (response) {
+    // The API call was successful!
+    return response.json();
+  }).then(function (data) {
+    // This is the JSON from our response
+    console.log(data);
+  }).catch(function (err) {
+    // There was an error
+    console.warn('Something went wrong.', err);
+  });
+};
 
 
 function displayDetails(info) {
