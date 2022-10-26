@@ -27,7 +27,7 @@ function getHTML(link) {
 };
 
 function getAPI(content) {
-  fetch(link, {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}, body: JSON.stringify({content})}).then(function (response) {
+  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", headers: {'Content-type': 'application/json', 'Accept': 'text/plain'}, body: JSON.stringify({content})}).then(function (response) {
     // The API call was successful!
     return response.json();
   }).then(function (data) {
