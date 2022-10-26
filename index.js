@@ -16,9 +16,12 @@ function getHTML(link) {
    console.log(doc);
    let mb = doc.getElementsByClassName("mb-0");
    let t = doc.getElementsByClassName("col pb-3 pl-3 pt-0 pr-0")[0].getElementsByClassName("mb-0")[1].innerHTML;
-   //let t1 = document.getElementsByClassName("mb-0")[0];
-   console.log(mb);
-  console.log(t);
+   console.log(t);
+   let tt = t.replace(/\\x/g, '%').replace(/\\n/g, "");
+   const city = tt.match(/[^ ]+$/g);
+   const adress = tt.match(/^[^ ]+/g);
+   var content = {"adress": decodeURI(adress), "city": decodeURI(city)};
+   console.log(content);
  }).catch(err => console.log(err))
 };
 
