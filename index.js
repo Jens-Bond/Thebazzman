@@ -14,7 +14,7 @@ function getHTML(link) {
    var parser = new DOMParser();
    var doc = parser.parseFromString(html, 'text/html');
    console.log(doc);
-   let mb0 = document.getElementsByClassName("mb-0").getElementsByTagName("p");
+   let mb0 = document.getElementsByClassName("mb-0")[0].getElementsByTagName("p")[0];
    let t1 = document.getElementsByClassName("mb-0")[0];
    console.log(mb0);
    console.log(t1);
