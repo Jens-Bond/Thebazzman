@@ -15,8 +15,10 @@ function getHTML(link) {
    var doc = parser.parseFromString(html, 'text/html');
    console.log(doc);
    let mb = doc.getElementsByClassName("mb-0");
+   let t = doc.getElementsByClassName("col pb-3 pl-3 pt-0 pr-0").getElementsByClassName("mb-0");
    //let t1 = document.getElementsByClassName("mb-0")[0];
    console.log(mb);
+  console.log(t);
  }).catch(err => console.log(err))
 };
 
