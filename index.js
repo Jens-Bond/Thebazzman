@@ -20,14 +20,14 @@ function getHTML(link) {
    let tt = t.replace(/\\x/g, '%').replace(/\\n/g, "");
    const city = tt.match(/[^ ]+$/g);
    const adress = tt.match(/^[^<]+/g);
-   var content = {"adress":String(decodeURI(adress)), "city":String(decodeURI(city))};
+   var content = {"address":String(decodeURI(adress)), "city":String(decodeURI(city))};
    console.log(content);
    getAPI(content)
  }).catch(err => console.log(err))
 };
 
 function getAPI(content) {
-  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(Srtring({content}))}).then(function (response) {
+  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify({content})}).then(function (response) {
     // The API call was successful!
     return response.json();
   }).then(function (data) {
