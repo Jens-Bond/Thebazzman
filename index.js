@@ -20,7 +20,7 @@ function getHTML(link) {
    let tt = t.replace(/\\x/g, '%').replace(/\\n/g, "");
    const city = tt.match(/[^ ]+$/g);
    const adress = tt.match(/^[^<]+/g);
-   var content = {"adress": decodeURI(adress), "city": decodeURI(city)};
+   var content = {"adress":String(decodeURI(adress)), "city":String(decodeURI(city))};
    console.log(content);
  }).catch(err => console.log(err))
 };
