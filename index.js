@@ -179,7 +179,8 @@ function creditFromURL(list) {
      var parser = new DOMParser();
      var doc1 = parser.parseFromString(html1, 'text/html');
      let creditBool = doc1.getElementById("data-credit").textContent;
-     let price = doc1.getElementsByClassName("price")[1];
+     console.log(doc1.getElementsByClassName("price"));
+     let price = doc1.getElementsByClassName("price")[0];
      console.log(price);
      if (creditBool === "Ja") {
        /*
@@ -224,7 +225,7 @@ function creditFromURL(list) {
        span1Text = document.createTextNode(list1[i]["year"]);
        span2Text = document.createTextNode(list1[i]["model"]);
        span3Text = document.createTextNode("Fordonsägare --- " + list1[i]["owner"]);
-       span3Text = document.createTextNode("Fordonsägare --- " + list1[i]["owner"]);
+       span3Text = document.createTextNode(price);
        span1.appendChild(span1Text);
        span2.appendChild(span2Text);
        span3.appendChild(span3Text);
