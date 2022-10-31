@@ -124,7 +124,7 @@ function getSearchHTML(link) {
    let mixList = namnTag.split(/\/|-/g);
    console.log(namnTag);
    carsAPI(content);
- }).catch(err => console.log(err))
+ }).catch(err => alert("Finns antagligen inte på Merinfo"))
 };
 
 
