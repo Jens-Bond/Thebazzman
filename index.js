@@ -33,7 +33,25 @@ function countSameItems(array1, array2){
  return compare(arr1, arr2);
 };
 
+function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
 
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                resolve(document.querySelector(selector));
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
 
 
 
@@ -149,7 +167,10 @@ function creditFromURL(list) {
  var listText1 = document.createTextNode(textP);
  listItem1.appendChild(listText1);
  document.getElementById("carsTitle").appendChild(listItem1);
-
+ waitForElm('#loaderId').then((elm) => {
+    console.log('Element is ready');
+    console.log(elm.textContent);
+ });
 
  for (let i = 0; i < list1.length; i++) {
    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
@@ -204,8 +225,12 @@ function creditFromURL(list) {
        element.appendChild(span2);
        element.appendChild(span3);
        document.getElementById("carsList").appendChild(element);
-      
+       
      }
+    var loader = document.createElement("div");
+    loader.setAttribute("id", "loaderId");
+    loader.setAttribute("style", "padding: 0; margin: 0; boarder: 0;")
+    document.getElementById("carsList").appendChild(loader);
     
    }).catch(err => console.log(err))
  };
