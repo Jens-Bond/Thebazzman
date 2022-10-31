@@ -219,7 +219,7 @@ function creditFromURL(list) {
        span3.setAttribute("class", "owner1");
        span1Text = document.createTextNode(list1[i]["year"]);
        span2Text = document.createTextNode(list1[i]["model"]);
-       span3Text = document.createTextNode(list1[i]["owner"]);
+       span3Text = document.createTextNode("Fordonsägare: ", list1[i]["owner"]);
        span1.appendChild(span1Text);
        span2.appendChild(span2Text);
        span3.appendChild(span3Text);
