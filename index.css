@@ -41,7 +41,7 @@ body {
 
 
 .search.input::placeholder {
-   color: color(#575756 a(0.8));
+   color: #03DAC5;
    text-transform: uppercase;
    letter-spacing: 1.5px;
 }
