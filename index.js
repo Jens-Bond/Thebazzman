@@ -90,7 +90,9 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
 
 
 function respondWith(nmr) {
-   getSearchLink(nmr);
+ getSearchLink(nmr);
+ //var loaderElem = document.createElement("div");
+ //loaderElem.setAttribute("id", "loaderElemId");
 };
 
 
