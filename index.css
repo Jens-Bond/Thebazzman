@@ -252,7 +252,8 @@ body {
   list-style: none;
   border-radius: 8px;
   /*background-color: #03DAC5;*/
-  background: rgb(3, 218, 197, 0.15)
+  background: rgb(3, 218, 197, 0.15);
+  display: flex;
 }
 
 .year1 {
@@ -268,4 +269,6 @@ body {
 .owner1 {
   opacity: 1;
   color: #A9BFB9;
+  margin-left: auto;
+  margin-right: 15px;
 }
