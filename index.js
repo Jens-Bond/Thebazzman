@@ -181,7 +181,7 @@ function creditFromURL(list) {
      var parser = new DOMParser();
      var doc1 = parser.parseFromString(html1, 'text/html');
      //evaluate prie:
-     var price = document.evaluate("(//span[@class='price'])[2]", doc1, null, XPathResult.ANY_TYPE, null);
+     var price = document.evaluate("//span", doc1, null, XPathResult.ANY_TYPE, null); // (//span[@class='price'])[2]
      console.log("prIIICE");
      console.log("prIIICE", price)
      
