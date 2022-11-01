@@ -175,7 +175,6 @@ function creditFromURL(list) {
     console.log(elm.textContent);
  });
  */
- let countC = 0;
  for (let i = 0; i < list1.length; i++) {
    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
      var parser = new DOMParser();
@@ -187,7 +186,6 @@ function creditFromURL(list) {
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
      if (creditBool === "Ja") {
-       countC += 1;
        //let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
        //console.log(list1[i]["url"]);
        //     let Code = list1[i]["url"];
@@ -224,10 +222,6 @@ function creditFromURL(list) {
       
     
    }).catch(err => console.log(err))
-  var textOnC = "Kreditköpta bilar: " + String(countC);
-  var onC = document.createTextNode(textOnC);
-  onC.setAttribute("class", "titleCarsYo");
-  document.getElementById("carsTitle").appendChild(onC);
  };
 };
 
