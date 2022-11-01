@@ -190,10 +190,10 @@ function creditFromURL(list) {
        //let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
        //console.log(list1[i]["url"]);
        let Code = list1[i]["url"];
-       let regex = /[^/]+$/g;
-       let priceCode = Code.toString(regex);
+       //let regex = /[^/]+$/g;
+       let priceCode = Code.match(/[^/]+$/g);
        console.log(priceCode);
-       //[^/]+$
+       
        
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
