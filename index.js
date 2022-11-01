@@ -190,10 +190,10 @@ function creditFromURL(list) {
        countC += 1;
        //let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
        //console.log(list1[i]["url"]);
-       let Code = list1[i]["url"];
+       //     let Code = list1[i]["url"];
        //let regex = /[^/]+$/g;
-       let priceCode = Code.match(/[^/]+$/g);
-       console.log(priceCode);
+       //      let priceCode = Code.match(/[^/]+$/g);
+       //      console.log(priceCode);
        
        
        var element = document.createElement("li");
@@ -226,6 +226,7 @@ function creditFromURL(list) {
    }).catch(err => console.log(err))
   var textOnC = "Kreditköpta bilar: " + String(countC);
   var onC = document.createTextNode(textOnC);
+  onC.setAttribute("class", "titleCarsYo");
   document.getElementById("carsTitle").appendChild(onC);
  };
 };
