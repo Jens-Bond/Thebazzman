@@ -182,6 +182,7 @@ function creditFromURL(list) {
      var doc1 = parser.parseFromString(html1, 'text/html');
      //evaluate prie:
      console.log(doc1);
+    console.log(list1[i]["url"]);
      
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
