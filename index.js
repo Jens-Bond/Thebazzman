@@ -181,42 +181,13 @@ function creditFromURL(list) {
      var parser = new DOMParser();
      var doc1 = parser.parseFromString(html1, 'text/html');
      //evaluate prie:
-     var price = document.evaluate("(//span[@class='price'])[2]", document, null, XPathResult.ANY_TYPE, null);
+     var price = document.evaluate("(//span[@class='price'])[2]", doc, null, XPathResult.ANY_TYPE, null);
      console.log("prIIICE");
      console.log("prIIICE", price)
      
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
      if (creditBool === "Ja") {
-       /*
-       var listItem = document.createElement("LI"); //Creates item list
-       var carInfoN = " ( " +list1[i]["year"] + " ) " + list1[i]["model"] + "---------" + "Ägare: " + list1[i]["owner"];
-       var listText = document.createTextNode(carInfoN);
-       listItem.appendChild(listText);
-       document.getElementById("carsList").appendChild(listItem);
-       */
-      
-       /*
-       var listItem = document.createElement("LI");
-       listItem.setAttribute("class", "listItemFlex");
-      
-       //var listItem = document.createElement('span')
-       //listItem.innerHTML = dateString;
-       var span1 = document.createElement('span');
-       span1.setAttribute("class", "year1");
-       var span1Text = document.createTextNode(list1[i]["year"]);
-       var span2 = document.createElement('span');
-       span2.setAttribute("class", "model1");
-       var span2Text = document.createTextNode(list1[i]["model"]);
-       var span3 = document.createElement('span');
-       span3.setAttribute("class", "owner1");
-       var span3Text = document.createTextNode(list1[i]["owner"]);
-      
-       listItem.appendChild(span1.appendChild(span1Text));
-       listItem.appendChild(span2.appendChild(span2Text));
-       listItem.appendChild(span3.appendChild(span3Text));
-       document.getElementById("carsList").appendChild(listItem);//.appendChild();
-       */
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
        span1 = document.createElement("span");
