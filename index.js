@@ -193,7 +193,7 @@ function creditFromURL(list) {
        //let regex = /[^/]+$/g;
        //      let priceCode = Code.match(/[^/]+$/g);
        //      console.log(priceCode);
-       countX += 1;
+       countC += 1;
        
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
@@ -224,7 +224,7 @@ function creditFromURL(list) {
     
    }).catch(err => console.log(err))
  };
- let onC = document.createElement("h6");
+ let onC = document.createElement("p");
  onC.setAttribute("class", "titleCarsYoo");
  let textTemp = "Köpta på kredit: " + String(countC)
  onCText = document.createTextNode(textTemp);
