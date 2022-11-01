@@ -193,7 +193,7 @@ function creditFromURL(list) {
        //let regex = /[^/]+$/g;
        //      let priceCode = Code.match(/[^/]+$/g);
        //      console.log(priceCode);
-       countC += 1;
+       countC = countC + 1;
        
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
