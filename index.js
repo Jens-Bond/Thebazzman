@@ -223,13 +223,13 @@ function creditFromURL(list) {
       
     
    }).catch(err => console.log(err))
-  let onC = document.createElement("h6");
-  onC.setAttribute("class", "titleCarsYoo");
-  onCText = document.creatheTextNode("Köpta på kredit: " + string(countC));
-  onC.appendChild(onCText);
-  document.getElementById("carsTitle").appendChild(onC);
-  
  };
+ let onC = document.createElement("h6");
+ onC.setAttribute("class", "titleCarsYoo");
+ let textTemp = "Köpta på kredit: " + String(countC)
+ onCText = document.creatheTextNode(textTemp);
+ onC.appendChild(onCText);
+ document.getElementById("carsTitle").appendChild(onC);
 };
 
 
