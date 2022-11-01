@@ -231,16 +231,6 @@ function creditFromURL(list) {
  onC.appendChild(onCText);
  document.getElementById("carsTitle").appendChild(onC);
  */
- document.addEventListener("onload", function(event){
-  console.log("LOOOOAD");
-  console.log(event)
-  const box = document.getElementById('carsList');
-  if (box.childNodes.length === 0) {
-   console.log('✅ Element is empty');
-  } else {
-   console.log('⛔️ Element is NOT empty');
- }
- });
 
 };
 
