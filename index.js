@@ -187,9 +187,8 @@ function creditFromURL(list) {
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
      if (creditBool === "Ja") {
-       let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
-       console.log(test);
-       console.log(test[0]);
+       //let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
+       console.log(list1[i]["url"]);
        
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
