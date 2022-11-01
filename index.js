@@ -227,7 +227,7 @@ function creditFromURL(list) {
  let onC = document.createElement("h6");
  onC.setAttribute("class", "titleCarsYoo");
  let textTemp = "Köpta på kredit: " + String(countC)
- onCText = document.creatheTextNode(textTemp);
+ onCText = document.createTextNode(textTemp);
  onC.appendChild(onCText);
  document.getElementById("carsTitle").appendChild(onC);
 };
