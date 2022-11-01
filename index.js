@@ -165,7 +165,7 @@ function creditFromURL(list) {
  let totalCars = list.length;
  var listItem1 = document.createElement("p");
  listItem1.setAttribute("class", "titleCarsYo");
- var textP = "På adressen är det totalt " + String(totalCars) + " bilar registrerade. Om någon av dom är kreditköpta listas de nedanför:";
+ var textP = "Totala antal bilar: " + String(totalCars);
  var listText1 = document.createTextNode(textP);
  listItem1.appendChild(listText1);
  document.getElementById("carsTitle").appendChild(listItem1);
@@ -175,7 +175,7 @@ function creditFromURL(list) {
     console.log(elm.textContent);
  });
  */
-
+ let countC = 0;
  for (let i = 0; i < list1.length; i++) {
    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
      var parser = new DOMParser();
@@ -187,6 +187,7 @@ function creditFromURL(list) {
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
      if (creditBool === "Ja") {
+       count += 1;
        //let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
        //console.log(list1[i]["url"]);
        let Code = list1[i]["url"];
@@ -220,7 +221,12 @@ function creditFromURL(list) {
     //                      loader.setAttribute("style", "padding: 0; margin: 0; boarder: 0;")
     //                      document.getElementById("carsList").appendChild(loader);
     
+      
+    
    }).catch(err => console.log(err))
+  var textOnC = "Kreditköpta bilar: " + String(count);
+  var onC = document.createTextNode(textOnC);
+  document.getElementById("carsTitle").appendChild(onC);
  };
 };
 
