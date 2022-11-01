@@ -181,12 +181,16 @@ function creditFromURL(list) {
      var parser = new DOMParser();
      var doc1 = parser.parseFromString(html1, 'text/html');
      //evaluate prie:
-     console.log(doc1);
-    console.log(list1[i]["url"]);
+     //console.log(doc1);
+     //console.log(list1[i]["url"]);
      
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
      if (creditBool === "Ja") {
+       let test = doc1.querySelector("#valuation-section-div > div > div.col-12.col-md-8 > div > div:nth-child(2) > section > span.price");
+       console.log(test);
+       console.log(test[0]);
+       
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
        span1 = document.createElement("span");
