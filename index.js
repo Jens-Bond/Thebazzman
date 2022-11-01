@@ -175,7 +175,6 @@ function creditFromURL(list) {
     console.log(elm.textContent);
  });
  */
- let countC = 0;
  for (let i = 0; i < list1.length; i++) {
    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
      var parser = new DOMParser();
@@ -193,7 +192,6 @@ function creditFromURL(list) {
        //let regex = /[^/]+$/g;
        //      let priceCode = Code.match(/[^/]+$/g);
        //      console.log(priceCode);
-       countC = countC + 1;
        
        var element = document.createElement("li");
        element.setAttribute("class", "carAll3");
@@ -224,12 +222,14 @@ function creditFromURL(list) {
     
    }).catch(err => console.log(err))
  };
+ /*
  let onC = document.createElement("p");
  onC.setAttribute("class", "titleCarsYoo");
  let textTemp = "Köpta på kredit: " + String(countC)
  onCText = document.createTextNode(textTemp);
  onC.appendChild(onCText);
  document.getElementById("carsTitle").appendChild(onC);
+ */
 };
 
 
