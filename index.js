@@ -169,15 +169,23 @@ function creditFromURL(list) {
  var listText1 = document.createTextNode(textP);
  listItem1.appendChild(listText1);
  document.getElementById("carsTitle").appendChild(listItem1);
+ /*
  waitForElm('#loaderId').then((elm) => {
     console.log('Element is ready');
     console.log(elm.textContent);
+ */
  });
 
  for (let i = 0; i < list1.length; i++) {
    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
      var parser = new DOMParser();
      var doc1 = parser.parseFromString(html1, 'text/html');
+     //evaluate prie:
+     var price = document.evaluate("(//span[@class='price'])[2]", document, null, XPathResult.ANY_TYPE, null);
+     console.log("prIIICE");
+     console.log("prIIICE", price)
+     
+     //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
      if (creditBool === "Ja") {
        /*
@@ -229,10 +237,10 @@ function creditFromURL(list) {
        document.getElementById("carsList").appendChild(element);
        
      }
-    var loader = document.createElement("div");
-    loader.setAttribute("id", "loaderId");
-    loader.setAttribute("style", "padding: 0; margin: 0; boarder: 0;")
-    document.getElementById("carsList").appendChild(loader);
+    //                      var loader = document.createElement("div");
+    //                      loader.setAttribute("id", "loaderId");
+    //                      loader.setAttribute("style", "padding: 0; margin: 0; boarder: 0;")
+    //                      document.getElementById("carsList").appendChild(loader);
     
    }).catch(err => console.log(err))
  };
