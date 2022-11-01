@@ -33,6 +33,7 @@ function countSameItems(array1, array2){
  return compare(arr1, arr2);
 };
 
+/*
 function waitForElm(selector) {
     return new Promise(resolve => {
         if (document.querySelector(selector)) {
@@ -52,7 +53,7 @@ function waitForElm(selector) {
         });
     });
 }
-
+*/
 
 
 
@@ -122,9 +123,9 @@ function getSearchHTML(link) {
    list_[list_.length-1] = list_[list_.length-1].replace(/^[0-9\s]*/g, '');
    collectedData["gatuadress/postord"] = [list_];
    var content = {"address":String(list_[0]), "city":String(list_[1])};
-   let namnTag = doc.getElementsByClassName("link-primary")[0].href;
-   let mixList = namnTag.split(/\/|-/g);
-   console.log(namnTag);
+   //let namnTag = doc.getElementsByClassName("link-primary")[0].href;
+   //let mixList = namnTag.split(/\/|-/g);
+   //console.log(namnTag);
    carsAPI(content);
  }).catch(err => alert("Finns antagligen inte på Merinfo"))
 };
