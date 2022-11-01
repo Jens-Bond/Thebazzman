@@ -230,6 +230,12 @@ function creditFromURL(list) {
  onC.appendChild(onCText);
  document.getElementById("carsTitle").appendChild(onC);
  */
+ const box = document.getElementById('carsList');
+ if (box.childNodes.length === 0) {
+  console.log('✅ Element is empty');
+ } else {
+  onsole.log('⛔️ Element is NOT empty');
+ }
 };
 
 
