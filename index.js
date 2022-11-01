@@ -181,10 +181,7 @@ function creditFromURL(list) {
      var parser = new DOMParser();
      var doc1 = parser.parseFromString(html1, 'text/html');
      //evaluate prie:
-     var xpathObj = document.evaluate("(//span[@class='price'])[2]", doc1, null, XPathResult.ANY_TYPE, null); // (//span[@class='price'])[2]
-     var price = xpathObj.textContent;
-     console.log("prIIICE");
-     console.log("prIIICE", price)
+     console.log(doc1);
      
      //Credit Checker:
      let creditBool = doc1.getElementById("data-credit").textContent;
