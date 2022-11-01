@@ -173,8 +173,8 @@ function creditFromURL(list) {
  waitForElm('#loaderId').then((elm) => {
     console.log('Element is ready');
     console.log(elm.textContent);
- */
  });
+ */
 
  for (let i = 0; i < list1.length; i++) {
    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
