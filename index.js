@@ -167,7 +167,7 @@ function creditFromURL(list) {
  let totalCars = list.length;
  var listItem1 = document.createElement("p");
  listItem1.setAttribute("class", "titleCarsYo");
- var textP = "Följande bilar är kreditköpta:";
+ var textP = "Följande bilar är kreditköpta: \n (Om rutan är tomm äger personen inge kreditköpta fordon)";
  var listText1 = document.createTextNode(textP);
  listItem1.appendChild(listText1);
  document.getElementById("carsTitle").appendChild(listItem1);
