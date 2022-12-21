@@ -276,3 +276,23 @@ body {
   margin-left: auto;
   margin-right: 15px;
 }
+
+
+#flexButton {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#switchIframe {
+  width: 150px;
+  align-self: center;
+  margin-bottom: 12px;
+  /*---------STYLE----------*/
+  border-radius: 20px;
+  height: 40px;
+  background-color: black;
+  border-width: 3px;
+  border-color: #03DAC5;
+  color: white;
+}
