@@ -5,11 +5,12 @@
   <title>Mindre-Info</title>
   <link rel="stylesheet" href="index.css" type="text/css">
 </head>
-<body>
+<body style="margin:0px;padding:0px;overflow:hidden">
 
 
    <div class="search container">
     <input id="inputNumber" class="search input" type="text" placeholder="Search">
+     <button id="clipboardButton" class="switchIframe">Sök efter det aktuellt kopierade nummret</button>
   </div>
  
 
@@ -21,18 +22,26 @@
       </div>
     </div>
   </div>
+  </div>
+
+<div id="flexButtonContainer">
   
-  <div id="flexButton">
-    <button id="switchIframe" onclick="myFunction()">Button</button>
-  </div>
+<button class="switchIframe" id="switchIframeMerinfo" onclick="showMerinfo()">Merinfo</button>
+  
+<button class="switchIframe" id="switchIframeAllaBolag" onclick="showAllaBolag()">AllaBolag</button>
+  
+<button class="switchIframe" id="linkedin" onclick="linkedin()">LinkedIn</button>
+  
+</div>
+  
+<div id="iframeDiv">
+   <iframe id="iframe1" src="https://www.merinfo.se/" frameborder="0" style="overflow:hidden;height:800px;width:100%;" height="800px" width="100%"></iframe>
+</div>
 
-  <div id="iframeDiv">
-   <iframe id="iframe1" src="https://www.merinfo.se/" frameborder="0" style="overflow:hidden;height:800px;width:100%" height="800px" width="100%"></iframe>
-  </div>
-  <div id="iframeDiv2">
-   <iframe id="iframe2" style="display:none;" src="https://www.allabolag.se/" frameborder="0" style="overflow:hidden;height:800px;width:100%" height="800px" width="100%"></iframe>
-  </div>
+<div id="iframeDiv2" style="display:none;">
+  <iframe id="iframe2" src="https://www.allabolag.se/" frameborder="0" style="overflow:hidden;height:800px;width:100%;" height="800px" width="100%"></iframe>
+</div>
 
- <script type="text/javascript" src="index.js"></script>
+
 </body>
 </html>
